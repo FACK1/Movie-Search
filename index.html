@@ -1,5 +1,76 @@
-<script src="js/api.js"></script>
-<button onclick="moviesToCards('Search Results', searchMovie('batman', 2018, 'false'))">GET JSON</button>
-<button onclick="moviesToCards('Most Popular', mostPopular())">Sort</button>
-<div id="card-parent-div">
-</div>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" lang="us-en">
+    <title>Movie Finder!</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img class="pic" src="assets/film.png" alt="The Movie DB"/>
+        <h1 class="main-text white-color h1">The Movie DB</h1>
+      </div>
+
+      <section class="find-section">
+        <h2 class="sub-text magenta-color">Find your favorite movies!</h2>
+        <form id="form">
+          <label for="title" class="label-text white-color">Title</label>
+          <input id="title" type="text" name="title" placeholder="Enter title">
+            <details>
+              <summary class="advanced-text white-color">Advanced</summary>
+                <label for="year" class="label-text white-color">Year</label>
+                <input id="year" type="text" name="year" placeholder="Enter Year">
+                <div class="checkbox">
+                  <input id="adult" type="checkbox" name="adult" value="adult">
+                  <span class="label-text white-color">For adult</span>
+                </div>
+            </details>
+          <div class="submit-button">
+            <input type="submit" value="Submit" class="magenta-background white-color">
+        </div>
+        </form>
+      </section>
+
+    </header>
+    <hr>
+    <section style="background-color:#404347">
+      <form class="sort">
+        <label for="sortby" class="label-text white-color">Sort by</label>
+        <select class="gery-background mage-color">
+          <option value="year">Year</option>
+          <option value="a-z">A-Z</option>
+          <option value="rateing">rateing</option>
+        </select>
+      </form>
+      <section class="cards">
+        <div class="card">
+        <img id="img" src="assets/film.jpg" alt="The Movie DB"/>
+          <h1 id="title"class="card-title">Title</h1>
+        </div>
+        <div class="card">
+        <img id="img" src="assets/film.jpg" alt="The Movie DB"/>
+          <h1 id="title"class="card-title">Title</h1>
+        </div>
+        <div class="card">
+        <img id="img" src="assets/film.jpg" alt="The Movie DB"/>
+          <h1 id="title"class="card-title">Title</h1>
+        </div>
+        <div class="card">
+        <img id="img" src="assets/film.png" alt="The Movie DB"/>
+          <h1 id="title"class="card-title">Title</h1>
+        </div>
+
+      </section>
+     </section>
+
+    <footer class="advanced-text white magenta-background"> <span> Copyright &copy; Movie-search 2018 </span></footer>
+
+
+  </body>
+
+</html>
+>>>>>>> 33afc1cc827d7881455589f80c2dad88ca44c407
