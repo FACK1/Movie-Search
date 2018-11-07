@@ -1,1 +1,32 @@
-css
+/* *{
+margin:0px;
+ }
+
+header{
+  display:flex;
+  background-image: url('../assets/background.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:75vh;
+  width:100%;
+
+}
+
+.logoandtitle {
+  dsplay:inline-block;
+  justify-content: flex-start;
+  margin:40px;
+  padding:15px;
+}
+
+h2 {
+
+    justify-content: flex-end;
+}
+
+.card {
+  background-color:yellow;
+  width:70px;
+  display:block;
+
+}*/
