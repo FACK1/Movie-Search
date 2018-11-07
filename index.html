@@ -5,47 +5,56 @@
     <meta charset="utf-8" lang="us-en">
     <title>Movie Finder!</title>
     <link rel="stylesheet" href="css/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
     <header>
-      <div class="logoandtitle">
-        <img src="assets/film.png" alt="The Movie DB" width="81px" height="72px"/>
-        <h1>The Movie DB</h1>
+      <div class="logo">
+        <img src="assets/film.png" alt="The Movie DB"/>
+        <h1 class="main-text white-color">The Movie DB</h1>
       </div>
 
-      <h2>Find your favorite movies!<h2>
 
-      <section>
+
+      <section class="find-section">
+        <h2 class="sub-text magenta-color">Find your favorite movies!</h2>
         <form id="form">
-          <label for="title">Title</label>
+          <label for="title" class="label-text white-color">Title</label>
           <input id="title" type="text" name="title" placeholder="Enter title">
             <details>
-              <summary>Advanced</summary>
-                <label for="year">Title</label>
+              <summary class="advanced-text white-color">Advanced</summary>
+                <label for="year" class="label-text white-color">Year</label>
                 <input id="year" type="text" name="year" placeholder="Enter Year">
-                <input id="adult" type="checkbox" name="adult" value="adult"> <span>For adult</span>
+                <div class="checkbox">
+                  <input id="adult" type="checkbox" name="adult" value="adult">
+                  <span class="label-text white-color">For adult</span>
+                </div>
             </details>
-          <input type="submit" value="Submit">
-          <label for="sortby">Sort by</label>
-          <select id="sort">
-            <option value="year">Year</option>
-            <option value="a-z">A-Z</option>
-            <option value="rateing">rateing</option>
-          </select>
+          <div class="submit-button">
+            <input type="submit" value="Submit" class="magenta-background white-color">
+        </div>
         </form>
       </section>
 
     </header>
     <hr>
-    <section>
+    <section style="background-color:#404347">
+      <form>
+        <label for="sortby" class="label-text white-color">Sort by</label>
+        <select id="sort">
+          <option value="year">Year</option>
+          <option value="a-z">A-Z</option>
+          <option value="rateing">rateing</option>
+        </select>
+      </form>
         <div class="card">one</div>
         <div class="card">two</div>
         <div class="card">three</div>
         <div class="card">four</div>
      </section>
 
-    <footer> <span> Copyright &copy; Movie-search 2018 </span></footer>
+    <footer class="advanced-text white-color magenta-background"> <span> Copyright &copy; Movie-search 2018 </span></footer>
 
 
   </body>

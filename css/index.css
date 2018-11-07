@@ -1,32 +1,179 @@
-/* *{
-margin:0px;
- }
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  margin: 0px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*///////////////////////////////////////////////////*/
+/*Shared*/
 
 header{
-  display:flex;
   background-image: url('../assets/background.jpg');
   background-size:cover;
   background-repeat:no-repeat;
-  height:75vh;
+  height:100vh;
   width:100%;
-
+}
+.main-text{
+  font-size: 70px;
+  padding-left: 20px;
 }
 
-.logoandtitle {
-  dsplay:inline-block;
-  justify-content: flex-start;
-  margin:40px;
-  padding:15px;
+.sub-text{
+  font-size: 40px;
 }
 
-h2 {
-
-    justify-content: flex-end;
+.label-text{
+  font-size: 20px;
 }
 
-.card {
-  background-color:yellow;
-  width:70px;
-  display:block;
+.advanced-text{
+  font-size: 16px;
+  margin-bottom: 3%;
+}
 
-}*/
+.white-color{
+  color: white;
+}
+
+.grey-color{
+  color: #404347;
+}
+
+.yellow-color{
+  color: #f1d600;
+}
+
+.magenta-color{
+  color: #d84550;
+}
+
+.grey-background{
+  background-color: #404347;
+}
+
+.magenta-background{
+  background-color: #d84550;
+}
+
+h1{
+    display:inline-block;
+    margin-top: 2px;
+}
+/*Shared*/
+/*Header*/
+img{
+  width:81px;
+  height:72px;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  padding: 5% 0;
+}
+/*Header*/
+/*Form*/
+input[type=submit] ,input[type=text],input[type=checkbox] {
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 3%;
+}
+input[type=checkbox]
+{
+  width: 5%;
+}
+#form{
+  width: 40%;
+}
+.checkbox
+{
+  display: block;
+}
+
+input[type=submit]{
+    margin-bottom: 7%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+.submit-button{
+  display: flex;
+  justify-content: center;
+}
+
+.find-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+    text-align: center;
+    }
+/*Form*/
+
+@media  screen and (max-width: 750px) {
+  #form{
+    width: 80%;
+}
+.sub-text{
+  font-size: 30px;
+}
+.main-text{
+
+  font-size: 35px;
+}
+img{
+  width:41px;
+  height:32px;
+}
+header{
+  height:60vh;
+}
+
+}
