@@ -10,8 +10,17 @@ function mostPopular() {
 }
 
 
-function addPopularMoviesCards() {
+function moviesToCards(title, movies) {
 
 }
-
+// issue #4
+function searchMovie(title, year, adult) {
+    var titleQuery = "&query=" + title;
+    var yearQuery = "&year=" + year;
+    var adultQuery = "&include_adult=" + adult;
+    var pageQuery = "&page=1";
+    var data = fetch(urlDomain + 'search/movie' + apiToken + titleQuery + pageQuery + adultQuery + yearQuery)
+        .then(response => response.json());
+    return data;
+}
 
