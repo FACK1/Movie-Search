@@ -16,19 +16,20 @@ function mostPopular() {
 }
 
 function moviesToCards(title, data) {
-    var  MoviesContainerElement = document.createElement("div");
+    var  MoviesContainerElement = document.createElement("section");
+    MoviesContainerElement.setAttribute("class", "cards");
     data.then((value)=>{
         console.log('value',value);
         var movies = (value.results).forEach(movieData => {
             // Create html card element from movie argument.
-            var posterUrl = "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movieData.poster_path;
+            var posterUrl = movieData.poster_path === null ? 'assets/no-image.gif' : "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movieData.poster_path;
             var movieElement = createCardElement(movieData.title, movieData.release_date.substring(0, 4), posterUrl);
             // Add html card element to MoviesContainerElement.
             MoviesContainerElement.appendChild(movieElement);
         });
         //TODO: Should add element ID.
-        document.getElementById("card-parent-div").innerHTML = "";
-        document.getElementById("card-parent-div").appendChild(MoviesContainerElement);
+        document.getElementById("cards-section").innerHTML = "";
+        document.getElementById("cards-section").appendChild(MoviesContainerElement);
     })
 
 
@@ -48,7 +49,10 @@ function searchMovie(title, year, adult) {
 
 function createCardElement(title, year, posterUrl) {
     var card = document.createElement("div");
-    card.innerHTML = "<h1>" + title + " (" + year + ")" + "</h1><img src='" + posterUrl + "'>";
+    card.setAttribute("class", "card");
+    card.innerHTML = "<img class='card-img' src='" + posterUrl + "' alt='The Movie Poster'>" +
+        "          <h1 class='card-title'>" + title + " (" + year + ")" +
+        "</h1>";
     //document.getElementById("myDIV").appendChild(card);
     return card;
 }
@@ -87,3 +91,18 @@ function moviesSectionNodes(){
     return document.getElementById("card-parent-div");
 
 }
+
+
+document.getElementById("search-btn").addEventListener("click", (event) => {
+    var title = document.getElementById("title").value;
+    var year = document.getElementById("year").value;
+    var adult = document.getElementById("adult").checked;
+    if(title != '') {
+        moviesToCards('Search Results:', searchMovie(title, year, adult));
+    }
+    else alert("Title cannot be Empty!")
+});
+
+
+
+moviesToCards('Most Popular', mostPopular());
