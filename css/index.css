@@ -166,8 +166,8 @@ footer{
     }
 /*Form*/
 /*Card*/
-#img{
-  width: 50%;
+.card-img{
+  width: 100%;
 }
 .cards{
 display:flex;
@@ -184,7 +184,7 @@ color:white;
 .card {
 background-color:#d84550;
 width:20%;
-height:60vh;
+/*height:60vh;*/
 margin-top:15px;
 margin-bottom:15px;
 border-radius: 10%;
@@ -200,8 +200,9 @@ align-items: center;
 
 }
 
-.card {width:85%;
-display:block;
+.card {
+    width:85%;
+    display:block;
 }
 
 }

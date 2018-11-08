@@ -30,7 +30,8 @@
                 </div>
             </details>
           <div class="submit-button">
-            <input type="submit" value="Submit" class="magenta-background white-color">
+            <input type="button" value="Submit" class="magenta-background white-color" id="search-btn">
+
         </div>
         </form>
       </section>
@@ -40,29 +41,14 @@
     <section style="background-color:#404347">
       <form class="sort">
         <label for="sortby" class="label-text white-color">Sort by</label>
-        <select class="gery-background mage-color">
+        <select id="sortby" class="gery-background mage-color">
           <option value="year">Year</option>
           <option value="a-z">A-Z</option>
           <option value="rateing">rateing</option>
         </select>
       </form>
-      <section class="cards">
-        <div class="card">
-        <img id="img" src="assets/film.jpg" alt="The Movie DB"/>
-          <h1 id="title"class="card-title">Title</h1>
-        </div>
-        <div class="card">
-        <img id="img" src="assets/film.jpg" alt="The Movie DB"/>
-          <h1 id="title"class="card-title">Title</h1>
-        </div>
-        <div class="card">
-        <img id="img" src="assets/film.jpg" alt="The Movie DB"/>
-          <h1 id="title"class="card-title">Title</h1>
-        </div>
-        <div class="card">
-        <img id="img" src="assets/film.png" alt="The Movie DB"/>
-          <h1 id="title"class="card-title">Title</h1>
-        </div>
+      <section class="cards" id="cards-section">
+
 
       </section>
      </section>
@@ -73,3 +59,5 @@
   </body>
 
 </html>
+
+<script src="js/api.js"></script>
