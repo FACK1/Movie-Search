@@ -6,9 +6,7 @@ var urlDomain = "https://api.themoviedb.org/3/";
 function mostPopular() {
     var data = fetch(urlDomain + "movie/popular" + apiToken)
         .then(response => {
-
             return response.json();
-
         });
     // console.log(data);
     return data;
@@ -57,11 +55,12 @@ function createCardElement(title, year, posterUrl) {
     return card;
 }
 
+
 function sortNodeList(sortBy, nodes) {
     var nodeArray = [];
     switch(sortBy) {
-        case 'AZ':
-            nodeArray =  (Array.from(nodes)).sort((a, b) => {
+        case 'a-z':
+            nodeArray =  (Array.prototype.slice.call(nodes)).sort((a, b) => {
                 if(a.title < b.title) { return -1; }
                 if(a.title > b.title) { return 1; }
                 return 0;
@@ -69,10 +68,10 @@ function sortNodeList(sortBy, nodes) {
             //return
             break;
         case 'year':
-            nodeArray = (Array.from(nodes)).sort((a, b) => a.year - b.year);
+            nodeArray = (Array.prototype.slice.call(nodes)).sort((a, b) => a.year - b.year);
             break;
         case 'rate':
-            nodeArray = (Array.from(nodes)).sort((a, b) => a.vote_avarage - b.vote_avarage);
+            nodeArray = (Array.prototype.slice.call(nodes)).sort((a, b) => a.vote_avarage - b.vote_avarage);
             break;
         default: return 'error';
     }
@@ -80,15 +79,18 @@ function sortNodeList(sortBy, nodes) {
 }
 
 function nodeArrayToCards(nodeArray){
-    var section = document.getElementById("");
-
+    //var section = document.getElementById("cards-section");
+    var section = document.createElement('section');
+    section.innerHTML = "";
     nodeArray.forEach(node => {
         section.appendChild(node);
     });
+    document.getElementById("cards-section").innerHTML = "";
+    document.getElementById("cards-section").appendChild(section);
 }
 
 function moviesSectionNodes(){
-    return document.getElementById("card-parent-div");
+    return document.getElementById("cards-section").childNodes;
 
 }
 
@@ -102,6 +104,16 @@ document.getElementById("search-btn").addEventListener("click", (event) => {
     }
     else alert("Title cannot be Empty!")
 });
+
+
+document.getElementById("sortby").addEventListener("change", (event) =>{
+    //console.log(event.target.value);
+    var value = event.target.value;
+    var nodes = moviesSectionNodes();
+    var nodeArr = sortNodeList(value, nodes);
+    nodeArrayToCards(nodeArr);
+});
+//sortSelect.childNodes;
 
 
 
