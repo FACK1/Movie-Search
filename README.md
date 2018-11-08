@@ -44,6 +44,12 @@ We used the following technologies:
 3- JS folder: index.js & api.js.
 
 
+#### Team  :
+1- aman shawar
+2- amen talahmah
+3- muhammad shareef
+4- orjwan rajabi
+
         
 
 
