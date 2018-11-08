@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body>
+  <body class="magenta-background">
     <header>
       <div class="logo">
         <img class="pic" src="assets/film.png" alt="The Movie DB"/>
@@ -17,9 +17,9 @@
 
       <section class="find-section">
         <h2 class="sub-text magenta-color">Find your favorite movies!</h2>
-        <form id="form">
+        <form id="form"action="index.html?title=&year=#section-title">
           <label for="title" class="label-text white-color">Title</label>
-          <input id="title" type="text" name="title" placeholder="Enter title">
+          <input id="title" type="text" name="title" placeholder="Enter title" required>
             <details>
               <summary class="advanced-text white-color">Advanced</summary>
                 <label for="year" class="label-text white-color">Year</label>
@@ -30,14 +30,12 @@
                 </div>
             </details>
           <div class="submit-button">
-            <input type="button" value="Submit" class="magenta-background white-color" id="search-btn">
-
+            <input type="submit" value="Submit" class="magenta-background white-color" id="search-btn">
         </div>
         </form>
       </section>
-
     </header>
-    <hr>
+
     <section style="background-color:#404347">
       <form class="sort">
         <label for="sortby" class="label-text white-color">Sort by</label>
@@ -47,9 +45,8 @@
           <option value="rateing">rateing</option>
         </select>
       </form>
+      <h1 class="main-text white-color h1" id="section-title">Most popular</h1>
       <section class="cards" id="cards-section">
-
-
       </section>
      </section>
 
